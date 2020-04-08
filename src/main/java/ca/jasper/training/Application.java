@@ -2,8 +2,15 @@ package ca.jasper.training;
 
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.commons.lang3.StringUtils;
 
 public class Application {
+    private int countWords(final String words) {
+        final String[] splittedWords = StringUtils.split(words, " ");
+
+        return splittedWords == null ? 0 : splittedWords.length;
+    }
+
     private void greet() {
         final List<String> greetings = new ArrayList<>();
         greetings.add("Doris");
@@ -23,5 +30,8 @@ public class Application {
         System.out.println ("Starting Application");
         Application app = new Application();
         app.greet();
+
+        final int numOfWords = app.countWords("I am your lord!");
+        System.out.println("There are " + numOfWords + " words");
     }
 }
