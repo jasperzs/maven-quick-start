@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import org.apache.commons.lang3.StringUtils;
 
 public class Application {
-    private int countWords(final String words) {
+    public int countWords(final String words) {
         final String[] splittedWords = StringUtils.split(words, " ");
 
         return splittedWords == null ? 0 : splittedWords.length;
     }
 
-    private void greet() {
+    public void greet() {
         final List<String> greetings = new ArrayList<>();
         greetings.add("Doris");
         greetings.add("Jasper");
